@@ -1,0 +1,15 @@
+# Versions tested in this project (Python 3.12)
+pandas==3.0.2
+numpy==2.4.4
+matplotlib==3.10.8
+scikit-learn==1.8.0
+scipy>=1.11
+pymupdf>=1.24,<2.0
+arabic-reshaper==3.0.1
+python-bidi==0.6.12
+openpyxl>=3.1
+pytest==9.1.1
+nbformat==5.11.1
+nbclient==0.11.0
+ipykernel==7.4.0
+# Tesseract OCR (Arabic) is needed only by src/legal_text_extraction.ocr_document (PDF extraction), which run_pipeline.py does not run

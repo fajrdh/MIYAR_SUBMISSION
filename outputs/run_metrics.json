@@ -1,0 +1,311 @@
+{
+  "charities": {
+    "rows": 2723,
+    "entity_counts": {
+      "جمعية أهلية": 2450,
+      "مؤسسة أهلية": 273
+    },
+    "top_regions": {
+      "الرياض": 798,
+      "مكة المكرمة": 444,
+      "القصيم": 227
+    },
+    "reg_number_shared_rows": 516,
+    "reg_number_unique_values": 2465,
+    "truncated_names": 292,
+    "exact_duplicate_group_rows": 44,
+    "governance_score_columns": 0,
+    "governance_score_analysis": "لم يُنفَّذ: الملف لا يحتوي على درجات حوكمة، ولا يوجد ملف درجات منفصل.",
+    "hhi": 1458,
+    "hhi_min_equal": 769,
+    "top3_regions_pct": 53.9,
+    "region_type_cramers_v": 0.26,
+    "regions_with_foundations": 8,
+    "foundations_in_riyadh": 164
+  },
+  "legal": {
+    "source": "data_clean/legal_articles_full.csv",
+    "sequence_checks": {
+      "reg": {
+        "found": 129,
+        "expected": 129
+      },
+      "gov": {
+        "found": 47,
+        "expected": 47
+      }
+    },
+    "articles_total": 176,
+    "articles_with_primary_topic": 176,
+    "topic_stats": {
+      "topics": 25,
+      "largest_topic": "مجلس الإدارة ومجلس الأمناء",
+      "largest_topic_articles": 25,
+      "largest_topic_pct": 14.2,
+      "top2_pct": 25.0,
+      "pareto_topics_for_80pct": 11,
+      "pareto_cover_pct": 83.0,
+      "chi2": 98.2,
+      "chi2_dof": 24,
+      "chi2_p": 6.035730950316116e-11,
+      "cramers_v": 0.75,
+      "chi2_cells_expected_below_5_pct": 76.0,
+      "rule_vs_tfidf_disagree": 79,
+      "rule_vs_tfidf_disagree_without_documented_override": 45,
+      "articles_with_documented_override": 49
+    },
+    "requirements_total": 124,
+    "requirements_by_type": [
+      {
+        "doc_key": "gov",
+        "requirement_type": "condition",
+        "n": 21
+      },
+      {
+        "doc_key": "gov",
+        "requirement_type": "obligation",
+        "n": 11
+      },
+      {
+        "doc_key": "gov",
+        "requirement_type": "prohibition",
+        "n": 7
+      },
+      {
+        "doc_key": "reg",
+        "requirement_type": "condition",
+        "n": 32
+      },
+      {
+        "doc_key": "reg",
+        "requirement_type": "obligation",
+        "n": 27
+      },
+      {
+        "doc_key": "reg",
+        "requirement_type": "prohibition",
+        "n": 26
+      }
+    ],
+    "topic_table": [
+      {
+        "topic": "مجلس الإدارة ومجلس الأمناء",
+        "gov_articles": 1,
+        "reg_articles": 24,
+        "total_articles": 25,
+        "gov_share_pct": 2.1,
+        "reg_share_pct": 18.6
+      },
+      {
+        "topic": "التأسيس والترخيص والتسجيل",
+        "gov_articles": 0,
+        "reg_articles": 19,
+        "total_articles": 19,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 14.7
+      },
+      {
+        "topic": "الانتخابات والترشح",
+        "gov_articles": 11,
+        "reg_articles": 5,
+        "total_articles": 16,
+        "gov_share_pct": 23.4,
+        "reg_share_pct": 3.9
+      },
+      {
+        "topic": "العضوية",
+        "gov_articles": 6,
+        "reg_articles": 8,
+        "total_articles": 14,
+        "gov_share_pct": 12.8,
+        "reg_share_pct": 6.2
+      },
+      {
+        "topic": "الحل والدمج",
+        "gov_articles": 0,
+        "reg_articles": 13,
+        "total_articles": 13,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 10.1
+      },
+      {
+        "topic": "اللجان",
+        "gov_articles": 10,
+        "reg_articles": 3,
+        "total_articles": 13,
+        "gov_share_pct": 21.3,
+        "reg_share_pct": 2.3
+      },
+      {
+        "topic": "المجالس الوطنية والفرعية",
+        "gov_articles": 0,
+        "reg_articles": 12,
+        "total_articles": 12,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 9.3
+      },
+      {
+        "topic": "المالية والموارد",
+        "gov_articles": 0,
+        "reg_articles": 11,
+        "total_articles": 11,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 8.5
+      },
+      {
+        "topic": "أحكام عامة وختامية",
+        "gov_articles": 4,
+        "reg_articles": 6,
+        "total_articles": 10,
+        "gov_share_pct": 8.5,
+        "reg_share_pct": 4.7
+      },
+      {
+        "topic": "الجمعية العمومية",
+        "gov_articles": 1,
+        "reg_articles": 6,
+        "total_articles": 7,
+        "gov_share_pct": 2.1,
+        "reg_share_pct": 4.7
+      },
+      {
+        "topic": "الأهداف والأنشطة",
+        "gov_articles": 0,
+        "reg_articles": 6,
+        "total_articles": 6,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 4.7
+      },
+      {
+        "topic": "المكافآت",
+        "gov_articles": 5,
+        "reg_articles": 0,
+        "total_articles": 5,
+        "gov_share_pct": 10.6,
+        "reg_share_pct": 0.0
+      },
+      {
+        "topic": "التمثيل والشخصية الاعتبارية",
+        "gov_articles": 0,
+        "reg_articles": 3,
+        "total_articles": 3,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 2.3
+      },
+      {
+        "topic": "الحوكمة والسياسات",
+        "gov_articles": 2,
+        "reg_articles": 1,
+        "total_articles": 3,
+        "gov_share_pct": 4.3,
+        "reg_share_pct": 0.8
+      },
+      {
+        "topic": "الرقابة الداخلية",
+        "gov_articles": 1,
+        "reg_articles": 2,
+        "total_articles": 3,
+        "gov_share_pct": 2.1,
+        "reg_share_pct": 1.6
+      },
+      {
+        "topic": "الإدارة التنفيذية والموارد البشرية",
+        "gov_articles": 1,
+        "reg_articles": 1,
+        "total_articles": 2,
+        "gov_share_pct": 2.1,
+        "reg_share_pct": 0.8
+      },
+      {
+        "topic": "الإفصاح والشفافية",
+        "gov_articles": 2,
+        "reg_articles": 0,
+        "total_articles": 2,
+        "gov_share_pct": 4.3,
+        "reg_share_pct": 0.0
+      },
+      {
+        "topic": "التعريفات والجهة المشرفة",
+        "gov_articles": 0,
+        "reg_articles": 2,
+        "total_articles": 2,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 1.6
+      },
+      {
+        "topic": "الصناديق الأهلية والعائلية",
+        "gov_articles": 0,
+        "reg_articles": 2,
+        "total_articles": 2,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 1.6
+      },
+      {
+        "topic": "العلاقات والتمويل الخارجي",
+        "gov_articles": 0,
+        "reg_articles": 2,
+        "total_articles": 2,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 1.6
+      },
+      {
+        "topic": "صفة النفع العام",
+        "gov_articles": 0,
+        "reg_articles": 2,
+        "total_articles": 2,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 1.6
+      },
+      {
+        "topic": "أحكام المستفيدين وأصحاب المصلحة",
+        "gov_articles": 1,
+        "reg_articles": 0,
+        "total_articles": 1,
+        "gov_share_pct": 2.1,
+        "reg_share_pct": 0.0
+      },
+      {
+        "topic": "التعريفات",
+        "gov_articles": 1,
+        "reg_articles": 0,
+        "total_articles": 1,
+        "gov_share_pct": 2.1,
+        "reg_share_pct": 0.0
+      },
+      {
+        "topic": "المؤسسة وما في حكمها",
+        "gov_articles": 0,
+        "reg_articles": 1,
+        "total_articles": 1,
+        "gov_share_pct": 0.0,
+        "reg_share_pct": 0.8
+      },
+      {
+        "topic": "تعارض المصالح",
+        "gov_articles": 1,
+        "reg_articles": 0,
+        "total_articles": 1,
+        "gov_share_pct": 2.1,
+        "reg_share_pct": 0.0
+      }
+    ],
+    "topics_absent_in_one_document": [
+      "أحكام المستفيدين وأصحاب المصلحة",
+      "الأهداف والأنشطة",
+      "الإفصاح والشفافية",
+      "التأسيس والترخيص والتسجيل",
+      "التعريفات",
+      "التعريفات والجهة المشرفة",
+      "التمثيل والشخصية الاعتبارية",
+      "الحل والدمج",
+      "الصناديق الأهلية والعائلية",
+      "العلاقات والتمويل الخارجي",
+      "المؤسسة وما في حكمها",
+      "المالية والموارد",
+      "المجالس الوطنية والفرعية",
+      "المكافآت",
+      "تعارض المصالح",
+      "صفة النفع العام"
+    ]
+  }
+}
