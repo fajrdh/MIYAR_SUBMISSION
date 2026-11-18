@@ -19,13 +19,42 @@ main{min-width:0}.topbar{background:var(--white);border-bottom:1px solid var(--l
 @media(max-width:420px){.metrics{gap:8px}.metric{padding:12px}.metric-number{font-size:24px}.metric-label{font-size:11px}.filters{grid-template-columns:1fr}.top-title{font-size:16px}}
 @media print{.sidebar,.topbar,.actions,.upload-box input,.upload-box button,.filters,.footer .no-print{display:none!important}.layout{display:block}.content{max-width:none;padding:0}.hero,.metric,.panel{box-shadow:none;break-inside:avoid}.table-wrap{overflow:visible}table{font-size:9px}th,td{padding:6px;min-width:0}.hero-mark{display:none}}
 .page{display:none}.page.active{display:block}.upload-box.drag{background:var(--teal-soft);border-color:var(--teal)}@media print{.page{display:block!important}.sidebar{display:none}.layout{display:block}}</style>
+<style id="followup-style">
+/* مِعيار للمتابعة */
+.fu-entity{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.fu-entity label{font-size:11px;font-weight:800}.fu-entity select{width:auto;min-width:200px}
+.fu-print-head{display:none;font-size:13px;font-weight:800;margin-bottom:10px}.fu-gap{margin-top:14px}.fu-sub{margin-top:18px!important}.fu-start{text-align:center;padding:32px}
+.fu-filters{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr)) minmax(170px,1.4fr) auto auto;gap:9px;margin-bottom:14px;align-items:end}
+.fu-check{display:flex;gap:6px;align-items:center;font-size:12px;white-space:nowrap;padding-bottom:9px}
+.fu-table td{vertical-align:middle}.fu-req{min-width:260px;max-width:420px}.fu-req .fu-art{font-weight:800}.fu-req .fu-snip{color:#526579;margin-top:3px;overflow-wrap:anywhere}
+.fu-table select,.fu-table input{width:100%;min-width:118px;padding:7px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--navy);font-size:11px}
+.fu-table input[type=date]{min-width:128px}
+.fu-st{border-inline-start:4px solid var(--c,#A9B8C7)!important}
+.tag.t-obligation{background:#e3eefb;color:#1f4f86}.tag.t-prohibition{background:#fbe6e6;color:#8e3434}.tag.t-condition{background:#fdf1dc;color:#7f5410}.tag.t-doc{background:#eef2f6;color:#3a4f66}
+.fu-badge{display:inline-block;border-radius:7px;padding:2px 7px;font-size:10px;font-weight:700;white-space:nowrap}.fu-late{background:#fbe6e6;color:var(--danger)}.fu-noev{background:#fdf1dc;color:var(--warning)}
+.fu-open{padding:7px 10px;font-size:11px}
+.fu-up{display:flex;justify-content:space-between;gap:10px;font-size:11px;padding:7px 0;border-bottom:1px solid var(--line)}.fu-up:last-child{border-bottom:0}.fu-up button{background:none;border:0;color:var(--navy);text-align:right;padding:0;font-size:11px}.fu-up button:hover{text-decoration:underline}
+.fu-dialog{border:0;border-radius:16px;padding:0;width:min(860px,94vw);max-height:90vh;color:var(--navy);box-shadow:0 20px 60px #102b4e40}.fu-dialog::backdrop{background:#102b4e66}
+.fu-dlg-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:18px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:1}.fu-dlg-head h3{margin:2px 0 0;font-size:16px}
+#fuDlgBody{padding:16px 20px 22px;display:grid;gap:16px}
+.fu-text{white-space:pre-wrap;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:12px;max-height:240px;overflow:auto}
+.fu-dlg-form{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.fu-dlg-form .wide{grid-column:1/-1}
+.field textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:9px;font:inherit;font-size:12px;color:var(--navy);min-height:70px;resize:vertical}
+.fu-box{border:1px solid var(--line);border-radius:12px;padding:14px}.fu-box h4{margin:0 0 8px;font-size:13px}
+.fu-ev{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:11px}.fu-ev:last-child{border-bottom:0}.fu-ev a,.fu-ev .fu-link{color:#176d62;font-weight:700;overflow-wrap:anywhere;background:none;border:0;padding:0;text-align:right}
+.fu-ev .x{background:none;border:0;color:var(--danger);font-size:11px}
+.fu-inline{display:grid;grid-template-columns:1fr 1.4fr auto;gap:8px;margin-top:10px}.fu-inline input{padding:9px;border:1px solid var(--line);border-radius:9px;font-size:12px}
+.fu-log{display:grid;gap:8px;max-height:260px;overflow:auto;margin-top:10px}.fu-log-item{font-size:11px;border-inline-start:3px solid var(--teal);padding:2px 10px}.fu-log-item.sys{border-color:#c8d3de;color:#526579}.fu-log-item time{display:block;color:var(--muted);font-size:10px}
+@media(max-width:1100px){.fu-filters{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:760px){.fu-filters{grid-template-columns:1fr 1fr}.fu-dlg-form{grid-template-columns:1fr}.fu-inline{grid-template-columns:1fr}.fu-entity{width:100%}.fu-entity select{min-width:0;flex:1 1 100%}}
+@media print{body.fu-printing .fu-print-head{display:block}body.fu-printing .page:not(#pg-fol){display:none!important}body.fu-printing #fuStart,body.fu-printing .fu-entity,body.fu-printing .fu-filters,body.fu-printing .fu-open,body.fu-printing dialog{display:none!important}body:not(.fu-printing) #pg-fol{display:none!important}.fu-table select,.fu-table input{border:0;padding:0;appearance:none;-webkit-appearance:none}}
+</style>
 </head>
 <body>
 <div class="layout">
 <aside class="sidebar">
   <div class="brand"><div class="brand-mark">ب</div><div><div class="brand-title">تحليل البيانات للقطاع غير الربحي</div><div class="brand-caption">من البيانات إلى المؤشرات، ومن المؤشرات إلى قرارات أفضل.</div></div></div>
   <div class="nav-title">مساحة العمل</div>
-  <nav class="nav" aria-label="التنقل الرئيسي"><button class="active" data-target="home" onclick="navigate(this,'home')"><span class="nav-icon">⌂</span>الرئيسية ورفع الملفات</button><button data-target="gov" onclick="navigate(this,'gov')"><span class="nav-icon">▦</span>تحليل الحوكمة</button><button data-target="res" onclick="navigate(this,'res')"><span class="nav-icon">≡</span>تحليل الموارد واللوائح</button><button data-target="stats" onclick="navigate(this,'stats')"><span class="nav-icon">▥</span>التحليل الإحصائي</button><button data-target="rec" onclick="navigate(this,'rec')"><span class="nav-icon">✧</span>التوصيات</button><button data-target="rep" onclick="navigate(this,'rep')"><span class="nav-icon">⇩</span>التقارير والتصدير</button></nav>
+  <nav class="nav" aria-label="التنقل الرئيسي"><button class="active" data-target="home" onclick="navigate(this,'home')"><span class="nav-icon">⌂</span>الرئيسية ورفع الملفات</button><button data-target="gov" onclick="navigate(this,'gov')"><span class="nav-icon">▦</span>تحليل الحوكمة</button><button data-target="res" onclick="navigate(this,'res')"><span class="nav-icon">≡</span>تحليل الموارد واللوائح</button><button data-target="stats" onclick="navigate(this,'stats')"><span class="nav-icon">▥</span>التحليل الإحصائي</button><button data-target="rec" onclick="navigate(this,'rec')"><span class="nav-icon">✧</span>التوصيات</button><button data-target="rep" onclick="navigate(this,'rep')"><span class="nav-icon">⇩</span>التقارير والتصدير</button><button data-target="fol" onclick="navigate(this,'fol')"><span class="nav-icon">✓</span>مِعيار للمتابعة</button></nav>
   <div class="sidebar-note">تُحفظ نتائج التحليل والمراجعات تلقائيًا في هذا المتصفح. لا تُزامَن بين الأجهزة ولا تُرفع إلى قاعدة بيانات سحابية.</div>
 </aside>
 <main>
@@ -91,6 +120,37 @@ main{min-width:0}.topbar{background:var(--white);border-bottom:1px solid var(--l
     <section class="panel"><div id="recommendationText" class="report-box">لا توجد بيانات بعد. ارفعي ملفات PDF لإنشاء ملخص من النتائج الفعلية.</div><div class="notice">عدم العثور على مادة أو عبارة لا يثبت عدم امتثال الجمعية. تُستخدم عبارات مثل «لم يُعثر على دليل في الملفات المرفوعة» و«يحتاج إلى تحقق». لا تحسب هذه النسخة درجة رسمية للحوكمة ولا تصدر حكمًا قانونيًا.</div></section>
     </div><div class="page" id="pg-rep"><div class="section-head" id="reports"><div><h2>التقارير والتصدير</h2><p>تصدير البيانات المستخرجة أو طباعة التقرير الحالي.</p></div></div>
     <section class="panel"><div class="actions"><button class="btn primary" onclick="exportCSV()">تصدير النتائج بصيغة CSV</button><button class="btn secondary" onclick="exportExcelCompatible()">ملف متوافق مع Excel</button><button class="btn secondary" onclick="printReport()">طباعة التقرير أو حفظه PDF</button></div><p class="hint">تصدير CSV وملف Excel المتوافق يعمل محليًا. تصدير PDF يتم عبر نافذة الطباعة في المتصفح باختيار «حفظ بصيغة PDF».</p></section>
+  </div><div class="page" id="pg-fol"><div class="section-head" id="followup"><div><h2>مِعيار للمتابعة</h2><p>قائمة متابعة تنظيمية: تسجّل فيها الجهة حالة كل متطلب، وترفق الأدلة والمستندات، وتتابع الإجراءات بنفسها.</p></div>
+    <div class="fu-entity"><label for="fuEntity">الجهة</label><select id="fuEntity" class="filter-input"></select><button class="btn secondary" id="fuAddEntity">+ جهة جديدة</button><button class="btn secondary" id="fuRenameEntity">تعديل الاسم</button><button class="btn danger-btn" id="fuDeleteEntity">حذف الجهة</button></div></div>
+    <div class="notice" id="fuNoSeed" hidden>تعذر تحميل بنود القائمة (الملف followup_seed.js). ولّديه بالأمر <code>python -m src.followup_checklist</code> من جذر المستودع.</div>
+    <section class="panel fu-start" id="fuStart" hidden><h3>ابدئي بإضافة جهة</h3><p class="panel-desc">لكل جهة قائمة متابعة مستقلة فيها 124 متطلبًا مستخرجًا من اللائحة التنفيذية وقواعد الحوكمة (جمل الالتزام والحظر والشرط).</p><button class="btn primary" id="fuStartBtn">+ إضافة جهة</button></section>
+    <div id="fuMain" hidden>
+    <div class="fu-print-head" id="fuPrintHead"></div>
+    <section class="metrics" id="fuMetrics"></section>
+    <section class="grid-2 fu-gap">
+      <div class="panel"><h3>الإنجاز حسب الموضوع</h3><p class="panel-desc">المستوفى من المتطلبات المنطبقة في كل موضوع (المتطلب قد يتبع أكثر من موضوع).</p><div id="fuTopics" class="topic-list"></div></div>
+      <div class="panel"><h3>توزيع الحالات</h3><p class="panel-desc">حالة المتطلبات كما سجّلتها الجهة.</p><div id="fuStatusBars" class="topic-list"></div><h3 class="fu-sub">أقرب الاستحقاقات</h3><div id="fuUpcoming"></div></div>
+    </section>
+    <section class="panel fu-gap"><h3>قائمة المتطلبات</h3><p class="panel-desc">غيّري الحالة والمسؤول والاستحقاق من الجدول مباشرة، أو افتحي «التفاصيل» لإرفاق الأدلة وتسجيل الإجراءات.</p>
+      <div class="fu-filters">
+        <div class="field"><label for="fuDoc">الوثيقة</label><select id="fuDoc" class="filter-input"><option value="">الكل</option><option value="gov">قواعد الحوكمة</option><option value="reg">اللائحة التنفيذية</option></select></div>
+        <div class="field"><label for="fuType">النوع</label><select id="fuType" class="filter-input"><option value="">الكل</option><option value="obligation">التزام</option><option value="prohibition">حظر</option><option value="condition">شرط</option></select></div>
+        <div class="field"><label for="fuTopic">الموضوع</label><select id="fuTopic" class="filter-input"></select></div>
+        <div class="field"><label for="fuStatus">الحالة</label><select id="fuStatus" class="filter-input"></select></div>
+        <div class="field"><label for="fuSearch">بحث</label><input id="fuSearch" class="filter-input" type="search" placeholder="رقم المادة، نص، مسؤول…"></div>
+        <label class="fu-check"><input type="checkbox" id="fuOverdue"> المتأخرة فقط</label>
+        <button class="btn secondary" id="fuReset">مسح الفلاتر</button>
+      </div>
+      <div class="table-wrap fu-table"><table><thead><tr><th>المتطلب</th><th>الموضوعات</th><th>الحالة</th><th>المسؤول</th><th>الاستحقاق</th><th>الأدلة</th><th></th></tr></thead><tbody id="fuBody"></tbody></table></div>
+      <div class="hint" id="fuCount"></div>
+    </section>
+    <section class="panel fu-gap"><h3>التصدير والنسخ الاحتياطي</h3>
+      <div class="actions"><button class="btn primary" id="fuCsv">تصدير القائمة CSV</button><button class="btn secondary" id="fuXls">ملف متوافق مع Excel</button><button class="btn secondary" id="fuPrint">طباعة تقرير المتابعة أو حفظه PDF</button><button class="btn secondary" id="fuBackup">نسخة احتياطية كاملة</button><button class="btn secondary" id="fuImportBtn">استيراد نسخة احتياطية</button><input type="file" id="fuImport" accept=".json,application/json" hidden></div>
+      <p class="hint">تُحفظ المتابعة والأدلة المرفقة في هذا المتصفح فقط. «النسخة الاحتياطية» ملف واحد يضم كل الجهات والأدلة، يُستورد في متصفح أو جهاز آخر.</p>
+    </section>
+    <div class="notice">الحالات والأدلة تسجّلها الجهة بنفسها لأغراض المتابعة الداخلية، وليست تقييمًا رسميًا ولا حكمًا قانونيًا على الامتثال. نصوص المواد مستخرجة آليًا وقد تحتاج إلى مطابقة مع الوثيقة الرسمية.</div>
+    </div>
+    <dialog id="fuDialog" class="fu-dialog" aria-labelledby="fuDlgTitle"><div class="fu-dlg-head"><div><div class="eyebrow" id="fuDlgMeta"></div><h3 id="fuDlgTitle"></h3></div><button class="btn secondary" id="fuDlgClose" aria-label="إغلاق">✕</button></div><div id="fuDlgBody"></div></dialog>
   </div></div>
   <footer class="footer">تحليل البيانات للقطاع غير الربحي • نسخة محلية تجريبية • لا تمثل تقييمًا رسميًا للحوكمة أو الامتثال.</footer>
 </main>
@@ -101,9 +161,9 @@ main{min-width:0}.topbar{background:var(--white);border-bottom:1px solid var(--l
 let articles=[],fileMeta=[],sortState={key:"fileName",dir:1};
 const STORAGE_KEY="nonprofit-governance-dashboard-v1";
 const CLOUD_URL_KEY="nonprofit-cloud-url-v1",CLOUD_ANON_KEY="nonprofit-cloud-anon-v1",CLOUD_ROW_ID="default";
-function cloudConfig(){return {url:(document.getElementById("cloudUrl")?.value||localStorage.getItem(CLOUD_URL_KEY)||"").trim().replace(/\\/$/,""),key:(document.getElementById("cloudKey")?.value||localStorage.getItem(CLOUD_ANON_KEY)||"").trim()}}
+function cloudConfig(){return {url:(document.getElementById("cloudUrl")?.value||localStorage.getItem(CLOUD_URL_KEY)||"").trim().replace(/\/$/,""),key:(document.getElementById("cloudKey")?.value||localStorage.getItem(CLOUD_ANON_KEY)||"").trim()}}
 function setCloudStatus(s){const e=document.getElementById("cloudStatus");if(e)e.textContent=s}
-function connectCloud(){const {url,key}=cloudConfig();if(!/^https:\\/\\/[a-zA-Z0-9.-]+\\.supabase\\.co$/.test(url)||!key){setCloudStatus("أدخلي رابط Supabase الصحيح والمفتاح العام.");return}localStorage.setItem(CLOUD_URL_KEY,url);localStorage.setItem(CLOUD_ANON_KEY,key);setCloudStatus("تم حفظ إعدادات الاتصال. جارٍ اختبار الاتصال…");syncCloud(true)}
+function connectCloud(){const {url,key}=cloudConfig();if(!/^https:\/\/[a-zA-Z0-9.-]+\.supabase\.co$/.test(url)||!key){setCloudStatus("أدخلي رابط Supabase الصحيح والمفتاح العام.");return}localStorage.setItem(CLOUD_URL_KEY,url);localStorage.setItem(CLOUD_ANON_KEY,key);setCloudStatus("تم حفظ إعدادات الاتصال. جارٍ اختبار الاتصال…");syncCloud(true)}
 async function syncCloud(testOnly=false){const {url,key}=cloudConfig();if(!url||!key){setCloudStatus("أدخلي رابط Supabase والمفتاح العام أولًا.");return}setCloudStatus("جارٍ الاتصال بقاعدة البيانات…");try{const headers={apikey:key,Authorization:"Bearer "+key,"Content-Type":"application/json"};const check=await fetch(url+"/rest/v1/dashboard_workspaces?workspace_id=eq."+encodeURIComponent(CLOUD_ROW_ID)+"&select=workspace_id",{headers});if(!check.ok)throw new Error(check.status===404?"الجدول dashboard_workspaces غير موجود؛ أنشئيه من ملف SUPABASE_SETUP.sql في المستودع.":"فشل الاتصال ("+check.status+"). تحققي من الرابط والمفتاح وصلاحيات الجدول.");if(testOnly){setCloudStatus("نجح الاتصال بقاعدة البيانات. اضغطي «مزامنة الآن» لحفظ النتائج.");return}const payload={version:1,savedAt:new Date().toISOString(),articles,fileMeta,orgName:document.getElementById("orgName")?.value||"",docType:document.getElementById("docType")?.value||"غير محدد",sourceNote:document.getElementById("sourceNote")?.value||""};const res=await fetch(url+"/rest/v1/dashboard_workspaces?on_conflict=workspace_id",{method:"POST",headers:{...headers,Prefer:"resolution=merge-duplicates,return=minimal"},body:JSON.stringify({workspace_id:CLOUD_ROW_ID,payload,updated_at:new Date().toISOString()})});if(!res.ok)throw new Error("فشل حفظ النتائج ("+res.status+"). راجعي صلاحيات الجدول.");setCloudStatus("تمت مزامنة "+articles.length+" مادة و"+fileMeta.length+" ملف بيانات. ملاحظة: ملفات PDF الأصلية نفسها لا تُرفع في هذه النسخة.")}catch(e){setCloudStatus(e.message||"تعذر الاتصال. راجعي إعدادات Supabase.");console.error(e)}}
 function saveWorkspace(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({version:1,savedAt:new Date().toISOString(),articles,fileMeta,orgName:document.getElementById("orgName")?.value||"",docType:document.getElementById("docType")?.value||"غير محدد",sourceNote:document.getElementById("sourceNote")?.value||""}));return true}catch(e){console.warn("تعذر حفظ مساحة العمل محليًا",e);return false}}
 function restoreWorkspace(){try{const u=document.getElementById("cloudUrl"),k=document.getElementById("cloudKey");if(u)u.value=localStorage.getItem(CLOUD_URL_KEY)||"";if(k)k.value=localStorage.getItem(CLOUD_ANON_KEY)||"";const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;const s=JSON.parse(raw);if(!s||s.version!==1)return;articles=Array.isArray(s.articles)?s.articles:[];fileMeta=Array.isArray(s.fileMeta)?s.fileMeta:[];document.getElementById("orgName").value=s.orgName||"";document.getElementById("docType").value=s.docType||"غير محدد";document.getElementById("sourceNote").value=s.sourceNote||"";document.getElementById("orgChip").textContent="الجمعية: "+(s.orgName||"غير محددة");document.getElementById("state").textContent=articles.length?"تم استعادة آخر جلسة محفوظة":"بانتظار الملفات";renderFileStatuses();document.getElementById("fileNames").textContent=fileMeta.length?"تم استعادة نتائج التحليل المحفوظة ("+fileMeta.length+" ملفات). أعيدي اختيار ملفات PDF لإعادة تحليلها.":"لم يتم اختيار ملفات."}catch(e){console.warn("تعذر استعادة مساحة العمل",e)}}
@@ -248,22 +308,183 @@ const h=(location.hash||"#home").slice(1);navigate(null,document.getElementById(
 })();
 </script>
 
+
+<script src="followup_seed.js"></script>
 <script>
+/* مِعيار للمتابعة — قائمة متابعة تنظيمية لكل جهة.
+   الحالات والملاحظات وسجل الإجراءات في localStorage، وملفات الأدلة في IndexedDB (هذا المتصفح فقط). */
 (function(){
-const _ra=renderAll,_um=updateMetrics;
-function docs(){const m={};fileMeta.forEach(f=>m[f.name]=f);return m}
-window.renderResources=function(){
-const d=document.getElementById("docBody"),r=document.getElementById("resBody");
-d.innerHTML=fileMeta.length?fileMeta.map(f=>`<tr><td>${esc(f.name)}</td><td>${esc((articles.find(a=>a.fileName===f.name)||{}).docType||"غير محدد")}</td><td>${f.pages}</td><td>${f.count}</td><td>${esc(f.status)}</td></tr>`).join(""):'<tr><td colspan="5" class="empty">لا توجد وثائق بعد. ارفع ملفًا من الصفحة الرئيسية أولًا.</td></tr>';
-const rows=articles.filter(a=>a.topics.some(t=>t.includes("الموارد المالية")||t.includes("التبرعات")));
-r.innerHTML=rows.length?rows.map(a=>`<tr><td>${esc(a.fileName)}</td><td>${esc(a.number)}</td><td>${a.page}</td><td>${esc(a.topic)}</td><td class="text-cell">${esc(a.text)}</td></tr>`).join(""):'<tr><td colspan="5" class="empty">لا توجد مواد مرتبطة بالموارد المالية في الملفات المعالجة.</td></tr>'};
-window.renderAll=function(){_ra();renderResources();const e=document.getElementById("emptyMsg");if(e)e.style.display=articles.length?"none":"block"};
-window.updateMetrics=function(){_um();const e=document.getElementById("emptyMsg");if(e)e.style.display=articles.length?"none":"block"};
-const box=document.querySelector(".upload-box"),inp=document.getElementById("pdfFiles");
-["dragover","dragenter"].forEach(ev=>box.addEventListener(ev,e=>{e.preventDefault();box.classList.add("drag")}));
-["dragleave","drop"].forEach(ev=>box.addEventListener(ev,e=>{e.preventDefault();box.classList.remove("drag")}));
-box.addEventListener("drop",e=>{const dt=new DataTransfer();[...e.dataTransfer.files].filter(f=>/\.pdf$/i.test(f.name)).forEach(f=>dt.items.add(f));if(!dt.files.length){alert("الملفات المقبولة: PDF فقط.");return}inp.files=dt.files;inp.dispatchEvent(new Event("change"))});
-const h=(location.hash||"#home").slice(1);navigate(null,document.getElementById("pg-"+h)?h:"home");renderResources();
+"use strict";
+const SEED=window.MIYAR_FOLLOWUP_SEED||{items:[],articles:{}};
+const ITEMS=SEED.items||[],ART=SEED.articles||{},BY_ID=Object.fromEntries(ITEMS.map(i=>[i.id,i]));
+const KEY="miyar-followup-v1",DB_NAME="miyar-followup-files",STORE="evidence",MAX_FILE=25*1024*1024;
+const STATUS={not_started:{l:"لم يبدأ",c:"#A9B8C7"},in_progress:{l:"قيد التنفيذ",c:"#E0A43A"},verify:{l:"يحتاج تحقق",c:"#6C8EBF"},met:{l:"مستوفى",c:"#2E9E8C"},na:{l:"غير منطبق",c:"#D6DEE6"}};
+const $=id=>document.getElementById(id);
+/* أدوات محلية حتى لا تعتمد الصفحة على السكربت الرئيسي */
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const normalize=s=>String(s||"").replace(/[إأآ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/[\u064B-\u0652\u0640]/g,"").replace(/\s+/g," ").trim();
+function downloadBlob(blob,name){const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+let state={version:1,active:null,entities:[]},openId=null,dbP=null;
+
+/* ---------- التخزين ---------- */
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&s.version===1&&Array.isArray(s.entities))state=s}catch(e){console.warn("تعذر قراءة بيانات المتابعة",e)}
+  if(!state.entities.some(e=>e.id===state.active))state.active=state.entities[0]?.id||null}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));return true}catch(e){alert("تعذر حفظ بيانات المتابعة في هذا المتصفح. صدّري نسخة احتياطية الآن.");console.error(e);return false}}
+function db(){return dbP||(dbP=new Promise((res,rej)=>{const r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=()=>r.result.createObjectStore(STORE);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)}))}
+async function idb(mode,fn){const d=await db();return new Promise((res,rej)=>{const tx=d.transaction(STORE,mode),st=tx.objectStore(STORE),r=fn(st);tx.oncomplete=()=>res(r&&r.result);tx.onerror=()=>rej(tx.error)})}
+const putFile=(id,blob)=>idb("readwrite",s=>s.put(blob,id)),getFile=id=>idb("readonly",s=>s.get(id)),delFile=id=>idb("readwrite",s=>s.delete(id));
+
+/* ---------- أدوات ---------- */
+const uid=p=>p+"-"+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const today=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const fmtDate=d=>d?new Date(d).toLocaleString("ar-SA-u-ca-gregory-nu-latn",{dateStyle:"medium",timeStyle:"short"}):"";
+const fmtDay=d=>d?new Date(d+"T00:00:00").toLocaleDateString("ar-SA-u-ca-gregory-nu-latn",{dateStyle:"medium"}):"";
+const size=b=>b<1024?b+" بايت":b<1048576?(b/1024).toFixed(0)+" ك.ب":(b/1048576).toFixed(1)+" م.ب";
+const entity=()=>state.entities.find(e=>e.id===state.active)||null;
+function rec(id,create){const e=entity();if(!e)return null;let r=e.items[id];if(!r){r={status:"not_started",owner:"",due:"",notes:"",evidence:[],log:[],updatedAt:null};if(create)e.items[id]=r}return r}
+function log(r,text,kind){r.log.unshift({at:new Date().toISOString(),text,kind:kind||"system"});r.updatedAt=new Date().toISOString()}
+const isLate=r=>!!r.due&&r.due<today()&&r.status!=="met"&&r.status!=="na";
+const artTitle=i=>`${i.docLabel} — المادة ${i.articleNo}`;
+
+/* ---------- الجهات ---------- */
+function addEntity(){const n=(prompt("اسم الجهة:")||"").trim();if(!n)return;const e={id:uid("ent"),name:n,createdAt:new Date().toISOString(),items:{}};state.entities.push(e);state.active=e.id;save();render()}
+function renameEntity(){const e=entity();if(!e)return;const n=(prompt("الاسم الجديد للجهة:",e.name)||"").trim();if(!n)return;e.name=n;save();render()}
+async function deleteEntity(){const e=entity();if(!e)return;if(!confirm(`حذف «${e.name}» مع كل حالاتها وأدلتها المرفقة من هذا المتصفح؟ لا يمكن التراجع.`))return;
+  const ids=Object.values(e.items).flatMap(r=>r.evidence.filter(v=>v.kind==="file").map(v=>v.id));for(const id of ids){try{await delFile(id)}catch(_){}}
+  state.entities=state.entities.filter(x=>x.id!==e.id);state.active=state.entities[0]?.id||null;save();render()}
+
+/* ---------- العرض ---------- */
+function render(){
+  $("fuNoSeed").hidden=ITEMS.length>0;
+  const sel=$("fuEntity");sel.innerHTML=state.entities.map(e=>`<option value="${esc(e.id)}">${esc(e.name)}</option>`).join("")||'<option value="">لا توجد جهات</option>';sel.value=state.active||"";
+  ["fuRenameEntity","fuDeleteEntity"].forEach(id=>$(id).disabled=!entity());
+  const has=!!entity()&&ITEMS.length>0;$("fuMain").hidden=!has;$("fuStart").hidden=!!entity()||!ITEMS.length;
+  if(!has)return;renderSummary();renderTable()}
+function counts(){const e=entity(),c={total:ITEMS.length,late:0,noEv:0};Object.keys(STATUS).forEach(k=>c[k]=0);
+  ITEMS.forEach(i=>{const r=e.items[i.id]||rec(i.id);c[r.status]++;if(isLate(r))c.late++;if(r.status==="met"&&!r.evidence.length)c.noEv++});
+  c.applicable=c.total-c.na;c.pct=c.applicable?Math.round(c.met/c.applicable*100):0;return c}
+function metric(label,value,foot,icon){return `<div class="metric"><div class="metric-top"><span class="metric-label">${label}</span><span class="metric-icon">${icon}</span></div><div class="metric-number">${value}</div><div class="metric-foot">${foot}</div></div>`}
+function renderSummary(){const c=counts(),e=entity();
+  $("fuMetrics").innerHTML=metric("نسبة الإنجاز",c.pct+"٪",`${c.met} مستوفى من ${c.applicable} متطلبًا منطبقًا`,"✓")+metric("قيد التنفيذ",c.in_progress,"متطلبات بدأ العمل عليها","↻")+metric("تحتاج تحقق",c.verify,"بانتظار مراجعة أو تأكيد","?")+metric("متأخرة",c.late,"تجاوزت تاريخ الاستحقاق ولم تُستوفَ","!")+metric("مستوفى بلا دليل",c.noEv,"يُستحسن إرفاق مستند يثبتها","⎙");
+  const t={};ITEMS.forEach(i=>{const r=e.items[i.id]||rec(i.id);if(r.status==="na")return;(i.topics.length?i.topics:["بدون موضوع"]).forEach(k=>{t[k]=t[k]||{a:0,m:0};t[k].a++;if(r.status==="met")t[k].m++})});
+  $("fuTopics").innerHTML=Object.entries(t).sort((a,b)=>b[1].a-a[1].a).map(([k,v])=>`<div class="topic-row"><span>${esc(k)}</span><div class="track"><div class="bar" style="width:${v.a?v.m/v.a*100:0}%"></div></div><span class="topic-count">${v.m}/${v.a}</span></div>`).join("")||'<div class="empty">كل المتطلبات مصنفة «غير منطبق».</div>';
+  $("fuStatusBars").innerHTML=Object.entries(STATUS).map(([k,s])=>`<div class="topic-row"><span>${s.l}</span><div class="track"><div class="bar" style="width:${c[k]/c.total*100}%;background:${s.c}"></div></div><span class="topic-count">${c[k]}</span></div>`).join("");
+  const up=ITEMS.map(i=>({i,r:e.items[i.id]})).filter(x=>x.r&&x.r.due&&x.r.status!=="met"&&x.r.status!=="na").sort((a,b)=>a.r.due.localeCompare(b.r.due)).slice(0,6);
+  $("fuUpcoming").innerHTML=up.length?up.map(({i,r})=>`<div class="fu-up"><button data-open="${esc(i.id)}">${esc(artTitle(i))} · ${esc(i.typeLabel)}</button><span class="${isLate(r)?"fu-badge fu-late":"muted"}">${fmtDay(r.due)}</span></div>`).join(""):'<div class="small muted">لا توجد تواريخ استحقاق مفتوحة.</div>'}
+function fillFilters(){const topics=[...new Set(ITEMS.flatMap(i=>i.topics))].sort((a,b)=>a.localeCompare(b,"ar"));
+  $("fuTopic").innerHTML='<option value="">كل الموضوعات</option>'+topics.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join("");
+  $("fuStatus").innerHTML='<option value="">كل الحالات</option>'+Object.entries(STATUS).map(([k,s])=>`<option value="${k}">${s.l}</option>`).join("")+'<option value="_noev">مستوفى بلا دليل</option>'}
+function filtered(){const e=entity(),d=$("fuDoc").value,ty=$("fuType").value,tp=$("fuTopic").value,st=$("fuStatus").value,late=$("fuOverdue").checked,q=normalize($("fuSearch").value).toLowerCase();
+  return ITEMS.filter(i=>{const r=e.items[i.id]||rec(i.id);
+    if(d&&i.doc!==d)return false;if(ty&&i.type!==ty)return false;if(tp&&!i.topics.includes(tp))return false;
+    if(st==="_noev"){if(r.status!=="met"||r.evidence.length)return false}else if(st&&r.status!==st)return false;
+    if(late&&!isLate(r))return false;
+    if(q){const hay=normalize([i.id,i.articleNo,"المادة "+i.articleNo,i.articleLabel,i.docLabel,i.snippet,i.topics.join(" "),r.owner,r.notes].join(" ")).toLowerCase();if(!hay.includes(q))return false}
+    return true})}
+function renderTable(){const e=entity(),rows=filtered();
+  $("fuBody").innerHTML=rows.length?rows.map(i=>{const r=e.items[i.id]||rec(i.id),s=STATUS[r.status];
+    return `<tr data-row="${esc(i.id)}"><td class="fu-req"><div class="topic-tags"><span class="tag t-doc">${esc(i.docLabel)}</span><span class="tag t-${i.type}">${esc(i.typeLabel)}</span></div><div class="fu-art">المادة ${i.articleNo} <span class="muted small">· ص${i.page} · ${esc(i.id)}</span></div><div class="fu-snip">${esc(i.snippet)}…</div></td>
+    <td><div class="topic-tags">${i.topics.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></td>
+    <td><select class="fu-st" style="--c:${s.c}" data-f="status" data-id="${esc(i.id)}" aria-label="الحالة">${Object.entries(STATUS).map(([k,x])=>`<option value="${k}"${k===r.status?" selected":""}>${x.l}</option>`).join("")}</select></td>
+    <td><input data-f="owner" data-id="${esc(i.id)}" value="${esc(r.owner)}" placeholder="—" aria-label="المسؤول"></td>
+    <td><input type="date" data-f="due" data-id="${esc(i.id)}" value="${esc(r.due)}" aria-label="تاريخ الاستحقاق"><div class="fu-ls">${lateHtml(r)}</div></td>
+    <td class="fu-evc">${evHtml(r)}</td>
+    <td><button class="btn secondary fu-open" data-open="${esc(i.id)}">التفاصيل</button></td></tr>`}).join(""):'<tr><td colspan="7" class="empty">لا توجد متطلبات مطابقة للفلاتر.</td></tr>';
+  $("fuCount").textContent=`عدد المتطلبات المعروضة: ${rows.length} من ${ITEMS.length}`}
+
+const lateHtml=r=>isLate(r)?'<span class="fu-badge fu-late">متأخر</span>':"";
+const evHtml=r=>r.evidence.length+(r.status==="met"&&!r.evidence.length?' <span class="fu-badge fu-noev">بلا دليل</span>':"");
+const logHtml=r=>r.log.length?r.log.map(l=>`<div class="fu-log-item${l.kind==="system"?" sys":""}"><time>${fmtDate(l.at)}</time>${esc(l.text)}</div>`).join(""):'<div class="small muted">لا توجد إجراءات مسجلة.</div>';
+/* تحديث صف واحد دون إعادة رسم الجدول، حتى لا يضيع مكان المؤشر أثناء التنقل بين الحقول */
+function updateRow(id){const tr=$("fuBody").querySelector(`tr[data-row="${CSS.escape(id)}"]`);if(!tr)return;const r=rec(id);
+  tr.querySelector('[data-f="status"]').style.setProperty("--c",STATUS[r.status].c);tr.querySelector(".fu-ls").innerHTML=lateHtml(r);tr.querySelector(".fu-evc").innerHTML=evHtml(r)}
+
+/* ---------- التعديل ---------- */
+function setField(id,f,v,src){const r=rec(id,true),old=r[f];if(old===v)return;r[f]=v;
+  if(f==="status")log(r,`تغيّرت الحالة من «${STATUS[old].l}» إلى «${STATUS[v].l}»`);
+  else if(f==="owner")log(r,v?`عُيّن المسؤول: ${v}`:"أُزيل المسؤول");
+  else if(f==="due")log(r,v?`تاريخ الاستحقاق: ${fmtDay(v)}`:"أُزيل تاريخ الاستحقاق");
+  else r.updatedAt=new Date().toISOString();
+  save();renderSummary();if(src==="table")updateRow(id);else renderTable();
+  if(openId===id){const l=$("fuDLog");if(l)l.innerHTML=logHtml(rec(id));const sel=$("fuDStatus");if(sel)sel.style.setProperty("--c",STATUS[rec(id).status].c)}}
+
+/* ---------- نافذة التفاصيل ---------- */
+function openDialog(id){openId=id;renderDialog();const d=$("fuDialog");if(!d.open)d.showModal()}
+function renderDialog(){const i=BY_ID[openId];if(!i)return;const r=rec(i.id),s=STATUS[r.status];
+  $("fuDlgMeta").textContent=`${i.docLabel} · ${i.typeLabel} · صفحة ${i.page} · ${i.id}`;$("fuDlgTitle").textContent=`المادة ${i.articleNo} (${i.articleLabel})`;
+  $("fuDlgBody").innerHTML=`<div><div class="topic-tags">${i.topics.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
+    <details open style="margin-top:8px"><summary class="small"><strong>نص المادة</strong> <span class="muted">(مستخرج آليًا)</span></summary><div class="fu-text">${esc(ART[i.articleKey]||i.snippet)}</div></details></div>
+  <div class="fu-dlg-form">
+    <div class="field"><label for="fuDStatus">الحالة</label><select id="fuDStatus" class="filter-input fu-st" style="--c:${s.c}">${Object.entries(STATUS).map(([k,x])=>`<option value="${k}"${k===r.status?" selected":""}>${x.l}</option>`).join("")}</select></div>
+    <div class="field"><label for="fuDOwner">المسؤول</label><input id="fuDOwner" value="${esc(r.owner)}" placeholder="اسم الموظف أو الإدارة"></div>
+    <div class="field"><label for="fuDDue">تاريخ الاستحقاق</label><input id="fuDDue" type="date" value="${esc(r.due)}"></div>
+    <div class="field wide"><label for="fuDNotes">ملاحظات</label><textarea id="fuDNotes" placeholder="كيف تستوفي الجهة هذا المتطلب؟ ما المتبقي؟">${esc(r.notes)}</textarea></div>
+  </div>
+  <div class="fu-box"><h4>الأدلة والمستندات (${r.evidence.length})</h4>
+    ${r.evidence.length?r.evidence.map(v=>`<div class="fu-ev"><div>${v.kind==="file"?`<button class="fu-link" data-dl="${esc(v.id)}">📎 ${esc(v.name)}</button> <span class="muted">${size(v.size||0)}</span>`:`<a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">🔗 ${esc(v.name)}</a>`}<div class="muted">${fmtDate(v.addedAt)}</div></div><button class="x" data-rmev="${esc(v.id)}">حذف</button></div>`).join(""):'<div class="small muted">لم تُرفق أدلة بعد.</div>'}
+    <div class="fu-inline"><label class="btn secondary" style="margin:0">📎 إرفاق ملفات<input type="file" id="fuDFiles" multiple hidden></label><span class="small muted" style="align-self:center">PDF، صور، Word، Excel… حتى ${MAX_FILE/1048576} م.ب للملف</span><span></span></div>
+    <div class="fu-inline"><input id="fuDLinkName" placeholder="اسم الرابط (مثال: محضر الجمعية العمومية)"><input id="fuDLinkUrl" type="url" placeholder="https://…" dir="ltr"><button class="btn secondary" id="fuDAddLink">إضافة رابط</button></div>
+  </div>
+  <div class="fu-box"><h4>سجل الإجراءات</h4>
+    <div class="fu-inline" style="grid-template-columns:1fr auto"><input id="fuDAction" placeholder="مثال: رُفع طلب اعتماد السياسة لمجلس الإدارة"><button class="btn primary" id="fuDAddAction">تسجيل إجراء</button></div>
+    <div class="fu-log" id="fuDLog">${logHtml(r)}</div>
+  </div>`}
+async function addFiles(files){const r=rec(openId,true);let added=0;
+  for(const f of files){if(f.size>MAX_FILE){alert(`الملف «${f.name}» أكبر من ${MAX_FILE/1048576} م.ب ولم يُرفق.`);continue}
+    const id=uid("ev");try{await putFile(id,f)}catch(e){alert("تعذر حفظ الملف في المتصفح (قد تكون المساحة ممتلئة).");console.error(e);break}
+    r.evidence.push({id,kind:"file",name:f.name,size:f.size,mime:f.type,addedAt:new Date().toISOString()});log(r,`أُرفق دليل: ${f.name}`);added++}
+  if(added){save();renderSummary();renderTable();renderDialog()}}
+function addLink(){const name=$("fuDLinkName").value.trim(),url=$("fuDLinkUrl").value.trim();
+  if(!/^https?:\/\/\S+$/i.test(url)){alert("أدخلي رابطًا يبدأ بـ https://");return}
+  const r=rec(openId,true);r.evidence.push({id:uid("ev"),kind:"link",name:name||url,url,addedAt:new Date().toISOString()});log(r,`أُضيف رابط دليل: ${name||url}`);save();renderSummary();renderTable();renderDialog()}
+async function removeEvidence(evId){const r=rec(openId,true),v=r.evidence.find(x=>x.id===evId);if(!v||!confirm(`حذف الدليل «${v.name}»؟`))return;
+  if(v.kind==="file"){try{await delFile(v.id)}catch(_){}}r.evidence=r.evidence.filter(x=>x.id!==evId);log(r,`حُذف دليل: ${v.name}`);save();renderSummary();renderTable();renderDialog()}
+async function downloadEvidence(evId){const v=rec(openId).evidence.find(x=>x.id===evId);if(!v)return;const b=await getFile(v.id).catch(()=>null);
+  if(!b){alert("الملف غير موجود في هذا المتصفح (ربما استُوردت البيانات بدون الملفات).");return}downloadBlob(b,v.name)}
+function addAction(){const t=$("fuDAction").value.trim();if(!t)return;const r=rec(openId,true);log(r,t,"user");save();$("fuDAction").value="";$("fuDLog").innerHTML=logHtml(r)}
+
+/* ---------- التصدير والنسخ الاحتياطي ---------- */
+function exportRows(){const e=entity();return [["الجهة","رقم المتطلب","الوثيقة","المادة","الصفحة","النوع","الموضوعات","مقتطف","الحالة","المسؤول","تاريخ الاستحقاق","متأخر","عدد الأدلة","الأدلة","ملاحظات","آخر إجراء","آخر تحديث"],
+  ...ITEMS.map(i=>{const r=e.items[i.id]||rec(i.id);return [e.name,i.id,i.docLabel,i.articleNo,i.page,i.typeLabel,i.topics.join("؛ "),i.snippet,STATUS[r.status].l,r.owner,r.due,isLate(r)?"نعم":"",r.evidence.length,r.evidence.map(v=>v.kind==="link"?`${v.name} (${v.url})`:v.name).join("؛ "),r.notes,r.log[0]?.text||"",r.updatedAt?fmtDate(r.updatedAt):""]})]}
+const fname=ext=>`متابعة_${(entity()?.name||"جهة").replace(/[\\/:*?"<>|\s]+/g,"_")}_${today()}.${ext}`;
+function exportCsv(){const csv="﻿"+exportRows().map(r=>r.map(x=>'"'+String(x??"").replace(/"/g,'""')+'"').join(",")).join("\r\n");downloadBlob(new Blob([csv],{type:"text/csv;charset=utf-8;"}),fname("csv"))}
+function exportXls(){const rows=exportRows(),t="<html><head><meta charset='utf-8'></head><body dir='rtl'><table>"+rows.map((r,i)=>"<tr>"+r.map(x=>`<${i?"td":"th"}>${esc(x)}</${i?"td":"th"}>`).join("")+"</tr>").join("")+"</table></body></html>";downloadBlob(new Blob(["﻿",t],{type:"application/vnd.ms-excel;charset=utf-8;"}),fname("xls"))}
+function printFollowup(){$("fuPrintHead").textContent=`تقرير المتابعة — ${entity()?.name||""} — ${fmtDay(today())}`;document.body.classList.add("fu-printing");window.print()}
+window.addEventListener("afterprint",()=>document.body.classList.remove("fu-printing"));
+const toDataUrl=b=>new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=()=>rej(fr.error);fr.readAsDataURL(b)});
+async function backup(){const files={},missing=[];
+  for(const e of state.entities)for(const r of Object.values(e.items))for(const v of r.evidence)if(v.kind==="file"){const b=await getFile(v.id).catch(()=>null);if(b)files[v.id]=await toDataUrl(b);else missing.push(v.name)}
+  const data={format:"miyar-followup-backup",version:1,exportedAt:new Date().toISOString(),seedVersion:SEED.version,state,files};
+  downloadBlob(new Blob([JSON.stringify(data)],{type:"application/json"}),`مِعيار_المتابعة_نسخة_احتياطية_${today()}.json`);
+  if(missing.length)alert("تم التصدير، لكن هذه الملفات غير موجودة في المتصفح ولم تُضمَّن: "+missing.join("، "))}
+async function restore(file){let data;try{data=JSON.parse(await file.text())}catch(_){alert("الملف ليس نسخة احتياطية صالحة.");return}
+  if(data?.format!=="miyar-followup-backup"||data.version!==1||!Array.isArray(data.state?.entities)){alert("الملف ليس نسخة احتياطية من «مِعيار للمتابعة».");return}
+  if(!confirm(`استيراد ${data.state.entities.length} جهة؟ ستُستبدل بيانات المتابعة الحالية في هذا المتصفح.`))return;
+  try{for(const [id,url] of Object.entries(data.files||{}))await putFile(id,await (await fetch(url)).blob())}catch(e){alert("تعذر استيراد بعض ملفات الأدلة.");console.error(e)}
+  state=data.state;if(!state.entities.some(e=>e.id===state.active))state.active=state.entities[0]?.id||null;save();render();alert("تم الاستيراد.")}
+
+/* ---------- الربط بالواجهة ---------- */
+function wire(){
+  $("fuEntity").addEventListener("change",e=>{state.active=e.target.value;save();render()});
+  $("fuAddEntity").onclick=addEntity;$("fuStartBtn").onclick=addEntity;$("fuRenameEntity").onclick=renameEntity;$("fuDeleteEntity").onclick=deleteEntity;
+  ["fuDoc","fuType","fuTopic","fuStatus","fuOverdue"].forEach(id=>$(id).addEventListener("change",renderTable));$("fuSearch").addEventListener("input",renderTable);
+  $("fuReset").onclick=()=>{["fuDoc","fuType","fuTopic","fuStatus","fuSearch"].forEach(id=>$(id).value="");$("fuOverdue").checked=false;renderTable()};
+  $("fuBody").addEventListener("change",e=>{const t=e.target;if(t.dataset.f)setField(t.dataset.id,t.dataset.f,t.value.trim(),"table")});
+  $("pg-fol").addEventListener("click",e=>{const o=e.target.closest("[data-open]");if(o)openDialog(o.dataset.open)});
+  $("fuCsv").onclick=exportCsv;$("fuXls").onclick=exportXls;$("fuPrint").onclick=printFollowup;$("fuBackup").onclick=backup;
+  $("fuImportBtn").onclick=()=>$("fuImport").click();$("fuImport").addEventListener("change",e=>{const f=e.target.files[0];e.target.value="";if(f)restore(f)});
+  const d=$("fuDialog");$("fuDlgClose").onclick=()=>d.close();d.addEventListener("close",()=>{openId=null});
+  d.addEventListener("click",e=>{if(e.target===d)d.close()});
+  $("fuDlgBody").addEventListener("change",e=>{const t=e.target;
+    if(t.id==="fuDStatus")setField(openId,"status",t.value);else if(t.id==="fuDOwner")setField(openId,"owner",t.value.trim());
+    else if(t.id==="fuDDue")setField(openId,"due",t.value);else if(t.id==="fuDNotes")setField(openId,"notes",t.value);
+    else if(t.id==="fuDFiles"){addFiles([...t.files]);t.value=""}});
+  $("fuDlgBody").addEventListener("click",e=>{const t=e.target.closest("button");if(!t)return;
+    if(t.id==="fuDAddLink")addLink();else if(t.id==="fuDAddAction")addAction();else if(t.dataset.rmev)removeEvidence(t.dataset.rmev);else if(t.dataset.dl)downloadEvidence(t.dataset.dl)});
+  $("fuDlgBody").addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="fuDAction"){e.preventDefault();addAction()}});
+  if(typeof window.navigate==="function"){const nav=window.navigate;window.navigate=function(b,id){nav(b,id);if(id==="fol")render()}}
+}
+load();fillFilters();wire();render();
 })();
 </script>
 
